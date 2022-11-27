@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="vendor/bootstrap-4.6.2-dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="vendor/bootstrap-datepicker/css/bootstrap-datepicker.css"
+    />
+    <link rel="stylesheet" href="vendor/dropzone/dist/min/dropzone.min.css" />
+    <link rel="stylesheet" href="assets/fontawesome/css/all.css" />
+    <link rel="stylesheet" href="assets/style/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <title>Form Realisasi</title>
+  </head>
+  <body>
+    <main>
+      <div class="container my-4">
+        <!-- form laporan realisasi -->
+        <div class="content shadow p-4 my-4">
+          <form class="needs-validation" novalidate>
+            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link active"
+                  id="pills-realisasi-tab"
+                  data-toggle="pill"
+                  data-target="#pills-realisasi"
+                  type="button"
+                  role="tab"
+                  aria-controls="pills-realisasi"
+                  aria-selected="true"
+                >
+                  Laporan Realisasi
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link"
+                  id="pills-uraian-tab"
+                  data-toggle="pill"
+                  data-target="#pills-uraian"
+                  type="button"
+                  role="tab"
+                  aria-controls="pills-uraian"
+                  aria-selected="false"
+                >
+                  Uraian Pekerjaan
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link"
+                  id="pills-upload-tab"
+                  data-toggle="pill"
+                  data-target="#pills-upload"
+                  type="button"
+                  role="tab"
+                  aria-controls="pills-upload"
+                  aria-selected="false"
+                >
+                  Upload Bukti
+                </button>
+              </li>
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+              <!-- tab form Laporan Realisasi -->
+              <div
+                class="tab-pane fade show active"
+                id="pills-realisasi"
+                role="tabpanel"
+                aria-labelledby="pills-realisasi-tab"
+              >
+                <div class="form-row">
+                  <div class="col mb-3">
+                    <label>Rencana</label>
+                    <input
+                      type="text"
+                      name="rencana"
+                      class="form-control"
+                      required
+                    />
+                    <div class="invalid-feedback">
+                      Field tidak boleh kosong.
+                    </div>
+                  </div>
+                  <div class="col mb-3">
+                    <label>Realisasi</label>
+                    <input
+                      type="text"
+                      name="realisasi"
+                      class="form-control"
+                      required
+                    />
+                    <div class="invalid-feedback">
+                      Field tidak boleh kosong.
+                    </div>
+                  </div>
+                  <div class="col mb-3">
+                    <label>Minggu</label>
+                    <input
+                      type="text"
+                      name="minggu"
+                      class="form-control"
+                      required
+                    />
+                    <div class="invalid-feedback">
+                      Field tidak boleh kosong.
+                    </div>
+                  </div>
+                  <div class="col mb-3">
+                    <label>Bulan</label>
+                    <input
+                      type="text"
+                      name="bulan"
+                      class="form-control"
+                      required
+                    />
+                    <div class="invalid-feedback">
+                      Field tidak boleh kosong.
+                    </div>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="col-md-6 mb-3">
+                    <label>Tanggal Awal</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span
+                          class="input-group-text"
+                          style="cursor: pointer"
+                          onclick="$('#pekerjaanAwal').focus();"
+                          ><i class="fa-solid fa-calendar"></i
+                        ></span>
+                      </div>
+                      <input
+                        type="text"
+                        id="pekerjaanAwal"
+                        name="tanggal_awal"
+                        class="form-control"
+                        required
+                      />
+                      <div class="invalid-feedback">
+                        Field tidak boleh kosong.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label>Tanggal Ahkir</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span
+                          class="input-group-text"
+                          style="cursor: pointer"
+                          onclick="$('#pekerjaanAkhir').focus();"
+                          ><i class="fa-solid fa-calendar"></i
+                        ></span>
+                      </div>
+                      <input
+                        type="text"
+                        id="pekerjaanAkhir"
+                        name="tanggal_akhir"
+                        class="form-control"
+                        required
+                      />
+                      <div class="invalid-feedback">
+                        Field tidak boleh kosong.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>Keterangan</label>
+                  <textarea
+                    class="form-control"
+                    name="keterangan"
+                    rows="5"
+                    required
+                  ></textarea>
+                  <div class="invalid-feedback">Field tidak boleh kosong.</div>
+                </div>
+                <div class="form-group">
+                  <label>Kendala</label>
+                  <textarea
+                    class="form-control"
+                    name="kendala"
+                    rows="5"
+                    required
+                  ></textarea>
+                  <div class="invalid-feedback">Field tidak boleh kosong.</div>
+                </div>
+              </div>
+
+              <!-- tab form uraian pekerjaan -->
+              <div
+                class="tab-pane fade"
+                id="pills-uraian"
+                role="tabpanel"
+                aria-labelledby="pills-uraian-tab"
+              >
+                <table class="table table-bordered">
+                  <thead class="thead-light">
+                    <tr>
+                      <th scope="col">Uraian Pekerjaan</th>
+                      <th scope="col">Satuan</th>
+                      <th scope="col">Bobot Pekerjaan</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Mark</td>
+                      <td>Otto</td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="bobot"
+                          required
+                        />
+                        <div class="invalid-feedback">
+                          Field tidak boleh kosong.
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- tab form upload -->
+              <div
+                class="tab-pane fade"
+                id="pills-upload"
+                role="tabpanel"
+                aria-labelledby="pills-upload-tab"
+              >
+                <div
+                  action="/file-upload"
+                  class="dropzone dz-clickable mb-4"
+                  id="uploadBukti"
+                >
+                  <div class="dz-message d-flex flex-column">
+                    <i class="fa-solid fa-cloud-arrow-up"></i>
+                    Drag &amp; Drop here or click
+                  </div>
+                </div>
+                <div class="d-flex justify-content-end">
+                  <button class="btn btn-primary" name="submit" type="submit">
+                    kirim
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <!-- akhir form realisasi -->
+      </div>
+    </main>
+
+    <script src="assets/script/jquery-3.6.0.min.js"></script>
+    <script src="vendor/bootstrap-4.6.2-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+    <script src="vendor/dropzone/dist/min/dropzone.min.js"></script>
+    <script src="assets/script/datePicker.js"></script>
+    <script src="assets/script/validateForm.js"></script>
+  </body>
+</html>
