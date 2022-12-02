@@ -57,6 +57,18 @@ body {
   text-transform: uppercase;
 }
 
+.wrapper {
+  position: relative;
+}
+.wrapper a {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  color: #333;
+}
+.wrapper a:hover {
+  color: red;
+}
 .footer {
   background: #333;
   color: white;
