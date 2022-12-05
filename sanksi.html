@@ -8,6 +8,11 @@
       rel="stylesheet"
       href="vendor/bootstrap-4.6.2-dist/css/bootstrap.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="vendor/bootstrap-datepicker/css/bootstrap-datepicker.css"
+    />
+    <link rel="stylesheet" href="assets/fontawesome/css/all.css" />
     <link rel="stylesheet" href="assets/style/styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,7 +20,7 @@
       href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
       rel="stylesheet"
     />
-    <title>Realisasi Pekerjaan</title>
+    <title>Adendum Pekerjaan</title>
   </head>
   <body>
     <nav class="navbar py-3 navbar-expand-lg navbar-light shadow-sm">
@@ -131,54 +136,109 @@
       <div class="container my-4">
         <div class="row">
           <div class="col-md-6">
-            <h2>Realisasi Pekerjaan</h2>
+            <h2>Sanksi Pekerjaan</h2>
           </div>
           <div class="col-md-6">
             <nav aria-label="breadcrumb">
               <ol class="breadcrumb shadow p-3 mb-5 rounded">
                 <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                <li class="breadcrumb-item"><a href="#">Monitoring</a></li>
+                <li class="breadcrumb-item"><a href="#">Laporan</a></li>
                 <li class="breadcrumb-item active" aria-current="page">
-                  Realisasi Pekerjaan
+                  Sanksi Pekerjaan
                 </li>
               </ol>
             </nav>
           </div>
         </div>
-        <div class="alert alert-success" role="alert">
+        <!-- <div class="alert alert-success" role="alert">
           This is a success alert—check it out!
-        </div>
-        <!-- form Relasi Pekerjaan -->
+        </div> -->
+        <!-- form Sanksi Pekerjaan -->
         <div class="content shadow p-4 my-4">
-          <h2 class="my-4">Form Uraian Pekerjaan</h2>
+          <h2 class="my-4">Form Sanksi/Denda Pekerjaan</h2>
           <form class="needs-validation" novalidate>
-            <div class="form-group">
-              <label>Uraian Pekerjaan</label>
-              <input
-                type="text"
-                name="uraian_pkrj"
-                class="form-control"
-                required
-              />
-              <div class="invalid-feedback">Field tidak boleh kosong.</div>
-            </div>
             <div class="form-row">
-              <div class="col-md-4 mb-3">
-                <label>Satuan</label>
+              <div class="col-md-6 mb-3">
+                <label>Nomor Sanksi / Denda</label>
                 <input
                   type="text"
-                  name="satuan"
+                  name="nmr_denda"
                   class="form-control"
                   required
                 />
                 <div class="invalid-feedback">Field tidak boleh kosong.</div>
               </div>
-              <div class="col-md-4 mb-3">
-                <label>Volume</label>
+              <div class="col-md-6 mb-3">
+                <label>Tanggal Pemberian Sanksi</label>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span
+                      class="input-group-text"
+                      style="cursor: pointer"
+                      onclick="$('#sanksi').focus();"
+                      ><i class="fa-solid fa-calendar"></i
+                    ></span>
+                  </div>
+                  <input
+                    type="text"
+                    id="sanksi"
+                    name="tanggal"
+                    class="form-control"
+                    placeholder="DD/MM/YYYY"
+                    required
+                  />
+                  <div class="invalid-feedback">Field tidak boleh kosong.</div>
+                </div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col-md-6 mb-3">
+                <label>Jenis Sanksi / Denda</label>
+                <select class="custom-select" name="jns_sanksi" required>
+                  <option selected disabled value="">Silahkan Pilih</option>
+                  <option>...</option>
+                  <option>...</option>
+                </select>
+                <div class="invalid-feedback">Pilih salah satu.</div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label>Tindakan</label>
                 <input
-                  type="number"
-                  name="volume"
+                  type="text"
+                  name="sanksi"
                   class="form-control"
+                  required
+                />
+                <div class="invalid-feedback">Field tidak boleh kosong.</div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Nilai Denda</label>
+              <input
+                type="text"
+                name="denda_nilai"
+                class="form-control"
+                required
+              />
+              <div class="invalid-feedback">Field tidak boleh kosong.</div>
+            </div>
+            <div class="form-group">
+              <label>Alasan</label>
+              <textarea
+                class="form-control"
+                name="kendala"
+                rows="5"
+                required
+              ></textarea>
+              <div class="invalid-feedback">Field tidak boleh kosong.</div>
+            </div>
+            <div class="form-row">
+              <div class="col-md-4 mb-3">
+                <label>Upload Dokumen</label>
+                <input
+                  type="file"
+                  class="form-control-file"
+                  name="dokumen"
                   required
                 />
                 <div class="invalid-feedback">Field tidak boleh kosong.</div>
@@ -191,45 +251,7 @@
             </div>
           </form>
         </div>
-        <!-- Akhir form Relasi Pekerjaan -->
-
-        <!-- Daftar Uraian Pekerjaan -->
-        <div class="content shadow p-4 my-4">
-          <h2 class="my-4">Daftar Uraian Pekerjaan</h2>
-          <div class="table-responsive">
-            <table class="table table-bordered table-hover">
-              <thead>
-                <tr class="bg-info text-white">
-                  <th scope="col">#</th>
-                  <th scope="col">First</th>
-                  <th scope="col">Last</th>
-                  <th scope="col">Handle</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-        <!-- Akhir Daftar Uraian Pekerjaan -->
+        <!-- Akhir form sanksi Pekerjaan -->
       </div>
     </main>
 
@@ -241,6 +263,8 @@
 
     <script src="assets/script/jquery-3.6.0.min.js"></script>
     <script src="vendor/bootstrap-4.6.2-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+    <script src="assets/script/datePicker.js"></script>
     <script src="assets/script/validateForm.js"></script>
   </body>
 </html>

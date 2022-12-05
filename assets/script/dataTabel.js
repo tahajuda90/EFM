@@ -30,3 +30,25 @@ $(function () {
     autoWidth: false,
   });
 });
+
+$(function () {
+  $("#sanksi").DataTable({
+    paging: true,
+    lengthChange: false,
+    searching: false,
+    ordering: true,
+    info: true,
+    autoWidth: false,
+  });
+});
+
+$(function () {
+  $("#rincianData").DataTable({
+    paging: true,
+    lengthChange: false,
+    searching: false,
+    ordering: true,
+    info: true,
+    autoWidth: false,
+  });
+});
