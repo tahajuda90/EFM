@@ -33,6 +33,8 @@ $(function () {
 
 $(function () {
   $("#sanksi").DataTable({
+    // tambah scrollX
+    scrollX: true,
     paging: true,
     lengthChange: false,
     searching: false,
