@@ -69,11 +69,16 @@ body {
 .wrapper a:hover {
   color: red;
 }
-
+.page {
+  background: white;
+  display: block;
+  margin-bottom: 0.5cm;
+  box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
+}
 .page-print {
   width: 210mm;
   min-height: 297mm;
-  padding: 20mm;
+  padding: 8mm;
   margin: 10mm auto;
   font-size: 16px;
 }
