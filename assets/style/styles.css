@@ -17,19 +17,28 @@ body {
 }
 
 .navbar {
-  /* min-height: 60px; */
-  background: #bad1c2;
+  background: #47b5ff;
   font-weight: bold;
 }
 
 .navbar .nav-item {
   font-size: 18px;
 }
+.navbar-nav li.active a {
+  color: #06283d !important;
+}
 
 .navbar .user {
   position: absolute;
   top: 10px;
   right: 90px;
+}
+.dropdown .dropdown-menu {
+  border-radius: 10px;
+}
+.dropdown .dropdown-menu .dropdown-item:hover {
+  background-color: #0096ff;
+  color: #fff;
 }
 .breadcrumb a {
   font-weight: bold;
@@ -68,6 +77,13 @@ body {
 }
 .wrapper a:hover {
   color: red;
+}
+
+.card-img {
+  width: 190px;
+  height: 190px;
+  background-color: #fff;
+  border-radius: 10px;
 }
 
 .page-print {
